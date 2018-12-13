@@ -1,3 +1,12 @@
 <resources>
-    <string name="app_name">idwall Project</string>
+
+    <!-- Default strings -->
+    <string name="app_name" translatable="false">idwall Project</string>
+
+    <!-- Login Activity -->
+    <string name="loginActivity_loginTitle">Create your account</string>
+    <string name="loginActivity_mailHint">Enter a valid mail address</string>
+    <string name="loginActivity_buttonEnter">Sign Up</string>
+    <string name="loginActivity_invalidMailAddress">Invalid mail address format</string>
+
 </resources>

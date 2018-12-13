@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	
+	<!-- Drawable dimens -->
+	<dimen name="DIMENS_STROKE_1DP">1dp</dimen>
+	<dimen name="DIMENS_RADIUS_14DP">14dp</dimen>
+	
+	<!-- Default dimens -->
+    <dimen name="DIMENS_8DP">8dp</dimen>
+    <dimen name="DIMENS_12DP">12dp</dimen>
+    <dimen name="DIMENS_16DP">16dp</dimen>
+    <dimen name="DIMENS_24DP">24dp</dimen>
+    <dimen name="DIMENS_28DP">28dp</dimen>
+    <dimen name="DIMENS_32DP">32dp</dimen>
+    <dimen name="DIMENS_36DP">36dp</dimen>
+    <dimen name="DIMENS_40DP">40dp</dimen>
+    <dimen name="DIMENS_44DP">44dp</dimen>
+	
+	<!-- Text dimens -->
+	<dimen name="DIMENS_TEXT_12SP">12sp</dimen>
+	<dimen name="DIMENS_TEXT_14SP">14sp</dimen>
+	<dimen name="DIMENS_TEXT_24SP">24sp</dimen>
+	
+</resources>
