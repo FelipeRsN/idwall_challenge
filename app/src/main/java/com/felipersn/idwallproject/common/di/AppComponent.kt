@@ -3,7 +3,7 @@ package com.felipersn.idwallproject.common.di
 import com.felipersn.idwallproject.MainApplication
 import com.felipersn.idwallproject.common.di.builder.ActivityBuilder
 import com.felipersn.idwallproject.common.di.builder.ViewModelBuilder
-import com.felipersn.idwallproject.common.di.module.ApplicationModule
+import com.felipersn.idwallproject.common.di.module.*
 import dagger.BindsInstance
 import dagger.Component
 import dagger.android.AndroidInjector
@@ -17,7 +17,12 @@ import javax.inject.Singleton
         AndroidSupportInjectionModule::class,
         ApplicationModule::class,
         ActivityBuilder::class,
-        ViewModelBuilder::class]
+        ViewModelBuilder::class,
+        NetworkModule::class,
+        NetworkServiceModule::class,
+        SettingsModule::class,
+        GsonModule::class
+    ]
 )
 interface AppComponent : AndroidInjector<MainApplication> {
 

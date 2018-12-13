@@ -29,6 +29,10 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            buildConfigField 'String', 'API_URL', '"https://api-iddog.idwall.co/"'
+        }
+        debug {
+            buildConfigField 'String', 'API_URL', '"https://api-iddog.idwall.co/"'
         }
     }
 }
@@ -58,6 +62,7 @@ dependencies {
     // ReactiveX dependencies
     implementation "io.reactivex.rxjava2:rxjava:$reactivex_java_version"
     implementation "io.reactivex.rxjava2:rxandroid:$reactivex_android_version"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:$reactivex_adapter_version"
 
     // Dagger dependencies
     kapt "com.google.dagger:dagger-compiler:$dagger_version"

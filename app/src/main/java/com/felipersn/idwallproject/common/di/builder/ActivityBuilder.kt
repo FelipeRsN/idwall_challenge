@@ -1,6 +1,9 @@
 package com.felipersn.idwallproject.common.di.builder
 
+import com.felipersn.idwallproject.common.di.annotation.ActivityScope
+import com.felipersn.idwallproject.presentation.ui.login.LoginActivity
 import dagger.Module
+import dagger.android.ContributesAndroidInjector
 
 /**
  * This Class is Responsible to create a instance for each Activity in the System that need a @Inject.
@@ -10,9 +13,9 @@ import dagger.Module
 @Module
 abstract class ActivityBuilder {
 
-//    @ActivityScope
-//    @ContributesAndroidInjector
-//    abstract fun provideMainActivity(): LoginActivity
+    @ActivityScope
+    @ContributesAndroidInjector
+    abstract fun provideLoginActivity(): LoginActivity
 
     //Add more Activity here
 
