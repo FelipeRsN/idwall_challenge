@@ -22,7 +22,7 @@ buildscript {
     ext.reactivex_android_version = '2.0.2'
 
     // Dagger version
-    ext.dagger_compiler_version = '2.19'
+    ext.dagger_version = '2.19'
 
     // Retrofit version
     ext.retrofit_version = '2.3.0'
