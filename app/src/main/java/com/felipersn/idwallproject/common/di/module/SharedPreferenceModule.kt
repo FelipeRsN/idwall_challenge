@@ -12,7 +12,8 @@ class SharedPreferenceModule {
 
     companion object {
         private const val SHARED_PREFERENCE_LOGIN_ID = "SHARED_PREFERENCE_LOGIN_ID"
-        const val SHARED_PREFERENCE_LOGIN_STATE = "SHARED_PREFERENCE_LOGIN_MODE"
+        const val SHARED_PREFERENCE_LOGIN_STATE = "SHARED_PREFERENCE_LOGIN_STATE"
+        const val SHARED_PREFERENCE_LOGIN_TOKEN = "SHARED_PREFERENCE_LOGIN_TOKEN"
     }
 
     @Provides

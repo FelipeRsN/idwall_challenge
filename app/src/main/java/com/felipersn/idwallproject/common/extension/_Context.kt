@@ -18,3 +18,11 @@ fun Context.isNetworkAvailable(): Boolean {
     val activeNetworkInfo = connectivityManager.activeNetworkInfo
     return activeNetworkInfo != null && activeNetworkInfo.isConnected
 }
+
+fun Context.getStatusBarHeight(): Int {
+    val resourceId = resources.getIdentifier("status_bar_height", "dimen", "android")
+    return if (resourceId > 0)
+        resources.getDimensionPixelSize(resourceId)
+    else
+        0
+}

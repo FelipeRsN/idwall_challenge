@@ -1,6 +1,7 @@
 package com.felipersn.idwallproject.common.di.module
 
 import com.felipersn.idwallproject.data.store.remote.services.LoginService
+import com.felipersn.idwallproject.data.store.remote.services.MainListService
 import dagger.Module
 import dagger.Provides
 import retrofit2.Retrofit
@@ -16,5 +17,11 @@ class NetworkServiceModule {
     }
 
     //Add more Retrofit services here.
+
+    @Provides
+    @Singleton
+    fun providesMainListService(retrofit: Retrofit): MainListService {
+        return retrofit.create(MainListService::class.java)
+    }
 
 }

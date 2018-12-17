@@ -28,7 +28,7 @@ class SplashActivity : BaseActivity() {
         getLoginState()
     }
 
-    private fun setupViewModel(){
+    private fun setupViewModel() {
         splashViewModel = ViewModelProviders.of(this, viewModelFactory).get(SplashViewModel::class.java)
     }
 

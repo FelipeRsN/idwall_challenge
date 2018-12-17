@@ -6,6 +6,7 @@
 	<dimen name="DIMENS_RADIUS_14DP">14dp</dimen>
 	
 	<!-- Default dimens -->
+    <dimen name="DIMENS_4DP">4dp</dimen>
     <dimen name="DIMENS_8DP">8dp</dimen>
     <dimen name="DIMENS_12DP">12dp</dimen>
     <dimen name="DIMENS_16DP">16dp</dimen>
@@ -19,6 +20,8 @@
 	<!-- Text dimens -->
 	<dimen name="DIMENS_TEXT_12SP">12sp</dimen>
 	<dimen name="DIMENS_TEXT_14SP">14sp</dimen>
+	<dimen name="DIMENS_TEXT_16SP">16sp</dimen>
+	<dimen name="DIMENS_TEXT_20SP">20sp</dimen>
 	<dimen name="DIMENS_TEXT_24SP">24sp</dimen>
 	
 </resources>

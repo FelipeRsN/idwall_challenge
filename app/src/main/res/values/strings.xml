@@ -11,5 +11,9 @@
 	<string name="loginActivity_mailHint">Enter a valid mail address</string>
 	<string name="loginActivity_buttonEnter">Sign Up</string>
 	<string name="loginActivity_invalidMailAddress">Invalid mail address format</string>
+	
+	<!-- Main List Activity -->
+	<string name="mainListActivity_categoryLabel">Category: %1$s</string>
+	<string name="mainListActivity_buttonLogout">Logout</string>
 
 </resources>

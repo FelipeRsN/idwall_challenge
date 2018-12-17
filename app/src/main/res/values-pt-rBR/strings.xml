@@ -1,13 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    
-    <!-- Error message -->
-    <string name="offline">Sem conexão com a internet</string>
-
-    <!-- Login Activity -->
-    <string name="loginActivity_loginTitle">Crie sua conta</string>
-    <string name="loginActivity_mailHint">Digite um e-mail válido</string>
-    <string name="loginActivity_buttonEnter">Cadastrar</string>
-    <string name="loginActivity_invalidMailAddress">Formato do e-mail está inválido</string>
+	
+	<!-- Error message -->
+	<string name="offline">Sem conexão com a internet</string>
+	
+	<!-- Login Activity -->
+	<string name="loginActivity_loginTitle">Crie sua conta</string>
+	<string name="loginActivity_mailHint">Digite um e-mail válido</string>
+	<string name="loginActivity_buttonEnter">Cadastrar</string>
+	<string name="loginActivity_invalidMailAddress">Formato do e-mail está inválido</string>
+	
+	<!-- Main List Activity -->
+	<string name="mainListActivity_categoryLabel">Categoria: %1$s</string>
+	<string name="mainListActivity_buttonLogout">Sair</string>
+	
 
 </resources>

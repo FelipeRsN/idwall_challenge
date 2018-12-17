@@ -47,13 +47,13 @@ dependencies {
     // Android dependencies
     implementation "androidx.appcompat:appcompat:$androidx_appcompat_version"
     implementation "androidx.constraintlayout:constraintlayout:$constraint_layout_version"
-    implementation "com.android.support:design:$support_lib_version"
-    implementation "com.android.support:cardview-v7:$support_lib_version"
-    implementation "com.android.support:recyclerview-v7:$support_lib_version"
+    implementation "com.google.android.material:material:$androidx_material_version"
 
     // Lifecycle dependencies
     // ViewModel and LiveData
     implementation "android.arch.lifecycle:extensions:$arch_component_lib_version"
+    implementation 'androidx.appcompat:appcompat:1.0.0-beta01'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.2'
     annotationProcessor "android.arch.lifecycle:common-java8:$arch_component_lib_version"
 
     // Gson dependencies
@@ -80,8 +80,8 @@ dependencies {
     implementation "com.squareup.okhttp3:logging-interceptor:$okhttp_version"
 
     // Image cache dependencies
-    implementation "com.github.bumptech.glide:glide:$glide_version"
     kapt "com.github.bumptech.glide:compiler:$glide_version"
+    implementation "com.github.bumptech.glide:glide:$glide_version"
 
     // Test dependencies
     // junit

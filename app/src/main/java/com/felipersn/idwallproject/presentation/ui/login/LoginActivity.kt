@@ -66,7 +66,6 @@ class LoginActivity : BaseActivity() {
                             activityLoginBinding.progressBarLoader.visibility = View.GONE
                             enableFields(true)
 
-                            loginViewModel.saveLoginState()
                             proceedToMainList()
                         }
                         Resource.Status.LOADING -> {
@@ -76,11 +75,11 @@ class LoginActivity : BaseActivity() {
                         Resource.Status.ERROR -> {
                             activityLoginBinding.progressBarLoader.visibility = View.GONE
                             enableFields(true)
-                            if(isNetworkAvailable()) {
+                            if (isNetworkAvailable()) {
                                 result.error?.let { message ->
                                     toast(message)
                                 }
-                            }else{
+                            } else {
                                 longToast(getString(R.string.offline))
                             }
                         }
