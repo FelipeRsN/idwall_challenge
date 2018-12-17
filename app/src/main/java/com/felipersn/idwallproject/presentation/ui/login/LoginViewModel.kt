@@ -45,9 +45,7 @@ class LoginViewModel @Inject constructor(
             .signUp(typedMailAddress)
             .subscribe(
                 { result -> onSuccessSignUp(result) },
-                { throwable ->
-                    signUpLiveData.value = SingleLiveEvent(Resource.error(throwable.message))
-                }
+                { throwable -> onErrorSignUp(throwable) }
             ))
     }
 
@@ -59,6 +57,10 @@ class LoginViewModel @Inject constructor(
             signUpLiveData.value = SingleLiveEvent(Resource.error())
         }
 
+    }
+
+    private fun onErrorSignUp(throwable: Throwable){
+        signUpLiveData.value = SingleLiveEvent(Resource.error(throwable.message))
     }
 
     private fun saveLoginState(token: String) {
