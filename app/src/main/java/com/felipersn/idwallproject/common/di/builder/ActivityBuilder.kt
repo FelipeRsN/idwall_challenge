@@ -2,6 +2,8 @@ package com.felipersn.idwallproject.common.di.builder
 
 import com.felipersn.idwallproject.common.di.annotation.ActivityScope
 import com.felipersn.idwallproject.presentation.ui.login.LoginActivity
+import com.felipersn.idwallproject.presentation.ui.mainlist.MainListActivity
+import com.felipersn.idwallproject.presentation.ui.splash.SplashActivity
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 
@@ -15,9 +17,16 @@ abstract class ActivityBuilder {
 
     @ActivityScope
     @ContributesAndroidInjector
-    abstract fun provideLoginActivity(): LoginActivity
+    abstract fun provideSplashActivity(): SplashActivity
 
     //Add more Activity here
 
+    @ActivityScope
+    @ContributesAndroidInjector
+    abstract fun provideLoginActivity(): LoginActivity
+
+    @ActivityScope
+    @ContributesAndroidInjector
+    abstract fun provideMainListActivity(): MainListActivity
 
 }

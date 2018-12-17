@@ -1,5 +1,7 @@
 package com.felipersn.idwallproject.presentation.ui.login
 
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.databinding.DataBindingUtil
@@ -7,11 +9,13 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import com.felipersn.idwallproject.R
+import com.felipersn.idwallproject.common.extension.isNetworkAvailable
+import com.felipersn.idwallproject.common.extension.longToast
 import com.felipersn.idwallproject.common.extension.toast
 import com.felipersn.idwallproject.common.tools.Resource
 import com.felipersn.idwallproject.databinding.ActivityLoginBinding
 import com.felipersn.idwallproject.presentation.base.BaseActivity
-import kotlinx.android.synthetic.main.activity_login.*
+import com.felipersn.idwallproject.presentation.ui.mainlist.MainListActivity
 import javax.inject.Inject
 
 class LoginActivity : BaseActivity() {
@@ -30,12 +34,12 @@ class LoginActivity : BaseActivity() {
     }
 
     private fun initView() {
-        setupDataBinding()
+        setupViewModel()
         setupListeners()
         setupObservers()
     }
 
-    private fun setupDataBinding() {
+    private fun setupViewModel() {
         loginViewModel = ViewModelProviders.of(this, viewModelFactory).get(LoginViewModel::class.java)
 
         activityLoginBinding.let {
@@ -47,7 +51,7 @@ class LoginActivity : BaseActivity() {
     }
 
     private fun setupListeners() {
-        editTextMailAddress.setOnEditorActionListener { _, _, _ ->
+        activityLoginBinding.editTextMailAddress.setOnEditorActionListener { _, _, _ ->
             loginViewModel.executeLogin()
             true
         }
@@ -61,7 +65,8 @@ class LoginActivity : BaseActivity() {
                         Resource.Status.SUCCESS -> {
                             activityLoginBinding.progressBarLoader.visibility = View.GONE
                             enableFields(true)
-                            //TODO save token and start new activity
+
+                            proceedToMainList()
                         }
                         Resource.Status.LOADING -> {
                             activityLoginBinding.progressBarLoader.visibility = View.VISIBLE
@@ -70,8 +75,12 @@ class LoginActivity : BaseActivity() {
                         Resource.Status.ERROR -> {
                             activityLoginBinding.progressBarLoader.visibility = View.GONE
                             enableFields(true)
-                            result.error?.let { message ->
-                                toast(message)
+                            if (isNetworkAvailable()) {
+                                result.error?.let { message ->
+                                    toast(message)
+                                }
+                            } else {
+                                longToast(getString(R.string.offline))
                             }
                         }
                     }
@@ -91,6 +100,18 @@ class LoginActivity : BaseActivity() {
                 activityLoginBinding.editTextMailAddress.isEnabled = false
                 activityLoginBinding.buttonEnter.isEnabled = false
             }
+        }
+    }
+
+    private fun proceedToMainList() {
+        startActivity(MainListActivity.provideIntent(baseContext))
+        finishAfterTransition()
+    }
+
+    companion object {
+
+        fun provideIntent(context: Context): Intent {
+            return Intent(context, LoginActivity::class.java)
         }
     }
 }

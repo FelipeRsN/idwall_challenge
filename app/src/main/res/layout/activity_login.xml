@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-		xmlns:tools="http://schemas.android.com/tools"
-		xmlns:app="http://schemas.android.com/apk/res-auto">
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools">
 	
 	<data>
 		
 		<variable
 			name="loginViewModelInView"
-			type="com.felipersn.idwallproject.presentation.ui.login.LoginViewModel"/>
+			type="com.felipersn.idwallproject.presentation.ui.login.LoginViewModel" />
 	</data>
 	
 	<androidx.constraintlayout.widget.ConstraintLayout
 		android:layout_width="match_parent"
 		android:layout_height="match_parent"
+		android:animateLayoutChanges="true"
 		android:background="@color/colorAccent"
-		tools:context=".presentation.ui.login.LoginActivity"
-		android:animateLayoutChanges="true">
+		tools:context=".presentation.ui.login.LoginActivity">
 		
 		<androidx.appcompat.widget.AppCompatTextView
 			android:id="@+id/textViewLoginTitle"
@@ -25,10 +25,10 @@
 			android:textColor="@color/colorPrimary"
 			android:textSize="@dimen/DIMENS_TEXT_24SP"
 			android:textStyle="bold"
-			app:layout_constraintStart_toStartOf="parent"
-			app:layout_constraintEnd_toEndOf="parent"
 			app:layout_constraintBottom_toTopOf="@id/editTextMailAddress"
-			app:layout_constraintTop_toTopOf="parent"/>
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toTopOf="parent" />
 		
 		<EditText
 			android:id="@+id/editTextMailAddress"
@@ -37,48 +37,48 @@
 			android:layout_marginStart="@dimen/DIMENS_24DP"
 			android:layout_marginEnd="@dimen/DIMENS_24DP"
 			android:layout_marginBottom="@dimen/DIMENS_24DP"
-			android:paddingStart="@dimen/DIMENS_16DP"
-			android:paddingEnd="@dimen/DIMENS_44DP"
-			android:paddingTop="@dimen/DIMENS_16DP"
-			android:paddingBottom="@dimen/DIMENS_16DP"
-			android:textColor="@color/colorPrimaryDark"
-			android:textSize="@dimen/DIMENS_TEXT_14SP"
-			android:maxLength="50"
-			android:maxLines="1"
+			android:background="@{loginViewModelInView.validMailAddress ? @drawable/edittext_background_colorprimary : @drawable/edittext_background_colorred}"
 			android:ellipsize="end"
-			android:text="@={loginViewModelInView.typedMailAddress}"
 			android:hint="@string/loginActivity_mailHint"
 			android:inputType="textEmailAddress"
-			android:background="@{loginViewModelInView.validMailAddress ? @drawable/edittext_background_colorprimary : @drawable/edittext_background_colorred}"
-			app:layout_constraintStart_toStartOf="parent"
+			android:maxLength="50"
+			android:maxLines="1"
+			android:paddingStart="@dimen/DIMENS_16DP"
+			android:paddingTop="@dimen/DIMENS_16DP"
+			android:paddingEnd="@dimen/DIMENS_44DP"
+			android:paddingBottom="@dimen/DIMENS_16DP"
+			android:text="@={loginViewModelInView.typedMailAddress}"
+			android:textColor="@color/colorPrimaryDark"
+			android:textSize="@dimen/DIMENS_TEXT_14SP"
+			app:layout_constraintBottom_toTopOf="@id/buttonEnter"
 			app:layout_constraintEnd_toEndOf="parent"
-			app:layout_constraintBottom_toTopOf="@id/buttonEnter"/>
+			app:layout_constraintStart_toStartOf="parent" />
 		
 		<ProgressBar
 			android:id="@+id/progressBarLoader"
 			android:layout_width="0dp"
 			android:layout_height="0dp"
 			android:indeterminate="true"
+			android:indeterminateTint="@color/colorPrimaryDark"
 			android:padding="@dimen/DIMENS_12DP"
 			android:visibility="gone"
-			android:indeterminateTint="@color/colorPrimaryDark"
-			app:layout_constraintTop_toTopOf="@id/editTextMailAddress"
 			app:layout_constraintBottom_toBottomOf="@id/editTextMailAddress"
+			app:layout_constraintDimensionRatio="1:1"
 			app:layout_constraintEnd_toEndOf="@id/editTextMailAddress"
-			app:layout_constraintDimensionRatio="1:1"/>
+			app:layout_constraintTop_toTopOf="@id/editTextMailAddress" />
 		
 		<androidx.appcompat.widget.AppCompatTextView
 			android:id="@+id/textViewInvalidMailAddress"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
+			android:alpha="@{loginViewModelInView.validMailAddress ? 0f : 1f}"
 			android:text="@string/loginActivity_invalidMailAddress"
 			android:textColor="@color/colorRed"
 			android:textSize="@dimen/DIMENS_TEXT_12SP"
-			android:alpha="@{loginViewModelInView.validMailAddress ? 0f : 1f}"
-			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintBottom_toTopOf="@id/buttonEnter"
 			app:layout_constraintEnd_toEndOf="parent"
-			app:layout_constraintTop_toBottomOf="@id/editTextMailAddress"
-			app:layout_constraintBottom_toTopOf="@id/buttonEnter"/>
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toBottomOf="@id/editTextMailAddress" />
 		
 		<Button
 			android:id="@+id/buttonEnter"
@@ -86,13 +86,13 @@
 			android:layout_height="wrap_content"
 			android:layout_margin="@dimen/DIMENS_16DP"
 			android:backgroundTint="@color/colorPrimary"
+			android:onClick="@{() -> loginViewModelInView.executeLogin()}"
 			android:text="@string/loginActivity_buttonEnter"
 			android:textColor="@color/colorAccent"
-			android:onClick="@{() -> loginViewModelInView.executeLogin()}"
-			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintBottom_toBottomOf="parent"
 			app:layout_constraintEnd_toEndOf="parent"
-			app:layout_constraintBottom_toBottomOf="parent"/>
-		
+			app:layout_constraintStart_toStartOf="parent" />
+	
 	
 	</androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

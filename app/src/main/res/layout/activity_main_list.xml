@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:background="@color/colorPrimary"
+	tools:context=".presentation.ui.mainlist.MainListActivity">
+	
+	<androidx.appcompat.widget.AppCompatTextView
+		android:id="@+id/textViewCategory"
+		android:layout_width="wrap_content"
+		android:layout_height="?attr/actionBarSize"
+		android:layout_marginStart="@dimen/DIMENS_16DP"
+		android:fontFamily="sans-serif-medium"
+		android:gravity="center_vertical"
+		android:textColor="@color/colorAccent"
+		android:textSize="@dimen/DIMENS_TEXT_16SP"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="parent"
+		tools:text="Category: husky" />
+	
+	<ImageButton
+		android:id="@+id/buttonFilter"
+		style="@style/Base.Widget.AppCompat.Button.Borderless"
+		android:layout_width="?attr/actionBarSize"
+		android:layout_height="?attr/actionBarSize"
+		android:src="@drawable/ic_filter_list_white"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintTop_toTopOf="parent" />
+	
+	<include
+		layout="@layout/include_main_list_filter"
+		android:layout_width="0dp"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="?attr/actionBarSize"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="parent" />
+	
+	<androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+		android:id="@+id/swipeRefreshFeed"
+		android:layout_width="0dp"
+		android:layout_height="0dp"
+		android:layout_marginTop="?attr/actionBarSize"
+		android:elevation="8dp"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="parent">
+		
+		<androidx.recyclerview.widget.RecyclerView
+			android:id="@+id/recyclerViewFeed"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:background="@drawable/backdrop_background"
+			android:paddingTop="@dimen/DIMENS_16DP"
+			android:paddingBottom="@dimen/DIMENS_16DP"
+			android:paddingStart="@dimen/DIMENS_4DP"
+			android:paddingEnd="@dimen/DIMENS_4DP"
+			android:clipToPadding="false"
+			app:spanCount="2" />
+	
+	</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

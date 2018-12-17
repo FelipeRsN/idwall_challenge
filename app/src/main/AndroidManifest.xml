@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest
-	xmlns:android="http://schemas.android.com/apk/res/android"
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
 	xmlns:tools="http://schemas.android.com/tools"
 	package="com.felipersn.idwallproject">
 	
 	<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 	<uses-permission android:name="android.permission.INTERNET" />
 	
 	<application
@@ -18,15 +18,26 @@
 		tools:ignore="GoogleAppIndexingWarning">
 		
 		<activity
-			android:name=".presentation.ui.login.LoginActivity"
+			android:name=".presentation.ui.splash.SplashActivity"
 			android:launchMode="singleTask"
-			android:windowSoftInputMode="stateHidden|adjustResize">
+			android:theme="@style/AppTheme.Launcher">
 			<intent-filter>
-				<action android:name="android.intent.action.MAIN"/>
+				<action android:name="android.intent.action.MAIN" />
 				
-				<category android:name="android.intent.category.LAUNCHER"/>
+				<category android:name="android.intent.category.LAUNCHER" />
 			</intent-filter>
 		</activity>
+		<activity
+			android:name=".presentation.ui.login.LoginActivity"
+			android:launchMode="singleTask"
+			android:windowSoftInputMode="stateHidden|adjustResize" />
+		<activity
+			android:name=".presentation.ui.mainlist.MainListActivity"
+			android:launchMode="singleTask"
+			android:theme="@style/AppThemeStatusBarSameColor" />
+		<activity android:name=".presentation.ui.imagepreview.ImagePreviewActivity"
+			android:launchMode="singleTask"
+			android:theme="@style/AppThemeTranslucent"/>
 	</application>
 
 </manifest>

@@ -21,7 +21,8 @@ import javax.inject.Singleton
         NetworkModule::class,
         NetworkServiceModule::class,
         SettingsModule::class,
-        GsonModule::class
+        GsonModule::class,
+        SharedPreferenceModule::class
     ]
 )
 interface AppComponent : AndroidInjector<MainApplication> {

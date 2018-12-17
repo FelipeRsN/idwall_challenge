@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:background="@color/colorBlackOpacity80"
+	tools:context=".presentation.ui.imagepreview.ImagePreviewActivity">
+	
+	<androidx.appcompat.widget.AppCompatImageView
+		android:id="@+id/imageViewPreview"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:scaleType="fitCenter"
+		android:layout_marginTop="?attr/actionBarSize"/>
+	
+	<com.google.android.material.appbar.AppBarLayout
+		android:id="@+id/appBarLayoutImagePreview"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:background="@color/colorBlackOpacity20">
+		
+		<androidx.appcompat.widget.Toolbar
+			android:id="@+id/toolbarImagePreview"
+			android:layout_width="match_parent"
+			android:layout_height="?attr/actionBarSize"/>
+		
+	</com.google.android.material.appbar.AppBarLayout>
+
+</FrameLayout>

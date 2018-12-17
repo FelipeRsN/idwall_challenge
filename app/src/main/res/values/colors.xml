@@ -5,8 +5,11 @@
     <color name="colorPrimaryDark">#4500C6</color>
     <color name="colorAccent">#F5F5F5</color>
     <color name="colorRed">#FF0000</color>
+    <color name="colorBlack">#000000</color>
     
     <!-- Custom colors -->
     <color name="colorPrimaryOpacity20">#325D00FF</color>
     <color name="colorRedOpacity20">#32FF0000</color>
+    <color name="colorBlackOpacity80">#CC000000</color>
+    <color name="colorBlackOpacity20">#32000000</color>
 </resources>

@@ -1,6 +1,6 @@
 package com.felipersn.idwallproject.data.store.remote.repository.login
 
-import com.felipersn.idwallproject.data.store.remote.dto.SignUpResponseDTO
+import com.felipersn.idwallproject.data.store.remote.dto.login.SignUpResponseDTO
 import com.felipersn.idwallproject.data.store.remote.services.LoginService
 import io.reactivex.Maybe
 import io.reactivex.Observable
