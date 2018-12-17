@@ -12,6 +12,11 @@ abstract class BaseViewModel : ViewModel() {
      * Contains common cleanup actions needed for all ViewModel, if any.
      * Subclasses may override this.
      */
+    override fun onCleared() {
+        super.onCleared()
+        onStopDisposable()
+    }
+
     fun onStopDisposable() {
         getCompositeDisposable().clear()
     }
